@@ -1,5 +1,6 @@
 package com.hy.reggietakeout.entity;
 
+import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
@@ -13,7 +14,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 员工信息
+ * 购物车
  * </p>
  *
  * @author hy
@@ -22,8 +23,8 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("employee")
-public class Employee implements Serializable {
+@TableName("shopping_cart")
+public class ShoppingCart implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,61 +35,50 @@ public class Employee implements Serializable {
     private Long id;
 
     /**
-     * 姓名
+     * 名称
      */
     private String name;
 
     /**
-     * 用户名
+     * 图片
      */
-    private String username;
+    private String image;
 
     /**
-     * 密码
+     * 主键
      */
-    private String password;
+    private Long userId;
 
     /**
-     * 手机号
+     * 菜品id
      */
-    private String phone;
+    private Long dishId;
 
     /**
-     * 性别
+     * 套餐id
      */
-    private String sex;
+    private Long setmealId;
 
     /**
-     * 身份证号
+     * 口味
      */
-    private String idNumber;
+    private String dishFlavor;
 
     /**
-     * 状态 0:禁用，1:正常
+     * 数量
      */
-    private Integer status;
+    private Integer number;
+
+    /**
+     * 金额
+     */
+    private BigDecimal amount;
 
     /**
      * 创建时间
      */
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
-
-    /**
-     * 更新时间
-     */
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updateTime;
-
-    /**
-     * 创建人
-     */
-    private Long createUser;
-
-    /**
-     * 修改人
-     */
-    private Long updateUser;
 
 
 }

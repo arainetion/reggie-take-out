@@ -1,16 +1,16 @@
 package com.hy.reggietakeout.mapper;
 
-import com.hy.reggietakeout.entity.Employee;
+import com.hy.reggietakeout.entity.Category;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
- * 员工信息 Mapper 接口
+ * 菜品及套餐分类 Mapper 接口
  * </p>
  *
  * @author hy
  * @since 2023-05-17
  */
-public interface EmployeeMapper extends BaseMapper<Employee> {
+public interface CategoryMapper extends BaseMapper<Category> {
 
 }

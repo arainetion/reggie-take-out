@@ -1,5 +1,6 @@
 package com.hy.reggietakeout.entity;
 
+import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
@@ -13,7 +14,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 员工信息
+ * 套餐菜品关系
  * </p>
  *
  * @author hy
@@ -22,8 +23,8 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("employee")
-public class Employee implements Serializable {
+@TableName("setmeal_dish")
+public class SetmealDish implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,39 +35,34 @@ public class Employee implements Serializable {
     private Long id;
 
     /**
-     * 姓名
+     * 套餐id 
+     */
+    private String setmealId;
+
+    /**
+     * 菜品id
+     */
+    private String dishId;
+
+    /**
+     * 菜品名称 （冗余字段）
      */
     private String name;
 
     /**
-     * 用户名
+     * 菜品原价（冗余字段）
      */
-    private String username;
+    private BigDecimal price;
 
     /**
-     * 密码
+     * 份数
      */
-    private String password;
+    private Integer copies;
 
     /**
-     * 手机号
+     * 排序
      */
-    private String phone;
-
-    /**
-     * 性别
-     */
-    private String sex;
-
-    /**
-     * 身份证号
-     */
-    private String idNumber;
-
-    /**
-     * 状态 0:禁用，1:正常
-     */
-    private Integer status;
+    private Integer sort;
 
     /**
      * 创建时间
@@ -89,6 +85,11 @@ public class Employee implements Serializable {
      * 修改人
      */
     private Long updateUser;
+
+    /**
+     * 是否删除
+     */
+    private Integer isDeleted;
 
 
 }

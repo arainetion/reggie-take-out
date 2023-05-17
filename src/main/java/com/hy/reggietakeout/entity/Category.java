@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 员工信息
+ * 菜品及套餐分类
  * </p>
  *
  * @author hy
@@ -22,8 +22,8 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("employee")
-public class Employee implements Serializable {
+@TableName("category")
+public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,39 +34,19 @@ public class Employee implements Serializable {
     private Long id;
 
     /**
-     * 姓名
+     * 类型   1 菜品分类 2 套餐分类
+     */
+    private Integer type;
+
+    /**
+     * 分类名称
      */
     private String name;
 
     /**
-     * 用户名
+     * 顺序
      */
-    private String username;
-
-    /**
-     * 密码
-     */
-    private String password;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
-     * 性别
-     */
-    private String sex;
-
-    /**
-     * 身份证号
-     */
-    private String idNumber;
-
-    /**
-     * 状态 0:禁用，1:正常
-     */
-    private Integer status;
+    private Integer sort;
 
     /**
      * 创建时间

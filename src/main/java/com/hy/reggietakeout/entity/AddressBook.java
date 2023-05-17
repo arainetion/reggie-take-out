@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 员工信息
+ * 地址管理
  * </p>
  *
  * @author hy
@@ -22,8 +22,8 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("employee")
-public class Employee implements Serializable {
+@TableName("address_book")
+public class AddressBook implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,19 +34,19 @@ public class Employee implements Serializable {
     private Long id;
 
     /**
-     * 姓名
+     * 用户id
      */
-    private String name;
+    private Long userId;
 
     /**
-     * 用户名
+     * 收货人
      */
-    private String username;
+    private String consignee;
 
     /**
-     * 密码
+     * 性别 0 女 1 男
      */
-    private String password;
+    private Integer sex;
 
     /**
      * 手机号
@@ -54,19 +54,49 @@ public class Employee implements Serializable {
     private String phone;
 
     /**
-     * 性别
+     * 省级区划编号
      */
-    private String sex;
+    private String provinceCode;
 
     /**
-     * 身份证号
+     * 省级名称
      */
-    private String idNumber;
+    private String provinceName;
 
     /**
-     * 状态 0:禁用，1:正常
+     * 市级区划编号
      */
-    private Integer status;
+    private String cityCode;
+
+    /**
+     * 市级名称
+     */
+    private String cityName;
+
+    /**
+     * 区级区划编号
+     */
+    private String districtCode;
+
+    /**
+     * 区级名称
+     */
+    private String districtName;
+
+    /**
+     * 详细地址
+     */
+    private String detail;
+
+    /**
+     * 标签
+     */
+    private String label;
+
+    /**
+     * 默认 0 否 1是
+     */
+    private Boolean isDefault;
 
     /**
      * 创建时间
@@ -89,6 +119,11 @@ public class Employee implements Serializable {
      * 修改人
      */
     private Long updateUser;
+
+    /**
+     * 是否删除
+     */
+    private Integer isDeleted;
 
 
 }
