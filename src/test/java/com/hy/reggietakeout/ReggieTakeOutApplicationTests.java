@@ -7,7 +7,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ReggieTakeOutApplicationTests {
 
     @Test
-    void contextLoads() {
+    void exceptionType() {
+
+        try {
+            int a = 2/0;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println(e);
+        }
+
+        System.out.println();
 
     }
 
